@@ -6,3 +6,70 @@ Medium green: #55c57a
 Dark green: #28b485
 
 */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /*la referencia se toma a partir del borde (fuera queda el margin y dentro borde, padding y content)*/
+}
+
+body {
+  font-family: "lato", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #777;
+  padding: 30px;
+}
+
+.header {
+  height: 95vh;
+  background-image: linear-gradient(
+      to right,
+      hsla(111, 55%, 64%, 0.812),
+      hsla(160, 64%, 43%, 0.801)
+    ),
+    url("../img/hero.jpg");
+  background-size: cover;
+  background-position: top; /*Others: bottom, center. cdo se achica la pantalla se mantiene la imagen fija en el top y se reajusta a partir de ahí*/
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 75vh,
+    0 100%
+  ); /* (x y, x y, x y, x y) agrego las coordenadas de tantos puntos como defina en mi figura, orientacion reloj y el primero es el de la izq.*/
+  position: relative;
+}
+
+.logo-box {
+  position: absolute; /*la referencia es la clase que está considerada como relative*/
+  top: 40px;
+  left: 40px;
+}
+.logo {
+  height: 35px; /*el navegador por si solo ajusta el width*/
+}
+
+.text-box{
+    position: absolute ;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%); /*esta transformación toma como referencia la posicioon del propio elemento*/
+}
+
+.heading-primary {
+  color: white;
+  text-transform: uppercase;
+}
+.heading-primary-main {
+  display: block; /*indica que ocupe toda una linea*/
+  font-size: 60px;
+  font-weight: 400;
+  letter-spacing: 35px;
+}
+.heading-primary-sub {
+  display: block;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 17.4px;
+}
