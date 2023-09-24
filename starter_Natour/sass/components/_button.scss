@@ -1,0 +1,70 @@
+.btn {
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block; /*esta prop permite evita que el padding de btn ocupe parte de las letras de arriba*/
+    border-radius: 10rem;
+    transition: all 0.2s; /*all se refiere a todas las props, en su lugar puedo especificar cual quiero que se transforme realmente*/
+    position: relative; /*esto es para el efecto del boton, en el btn-after coloqué position absolute, lego de no u¡indicar esto la primera posicion relativa que encontrará sera de la del header y no es lo que quiero*/
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.2); /* x y blur color*/
+    &::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+    }
+  }
+
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 1rem rgba($color-black, 0.2);
+  }
+
+  &--white {
+    background-color: $color-white;
+    color: $color-gray-dark;
+    &::after {
+      background-color: $color-white;
+    }
+  }
+
+  /*-----------EFECTO DEL BOTON ------------------*/
+  &::after {
+    content: ""; /*simepre tiene que estar presente*/
+    display: inline-block; /*porqeu el btn est'a también online block*/
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s; /*sin esta l'inea no se ve el efecto de desvanecimiento*/
+  } /*coloca un elemento btn con las mismas props despues del btn*/
+
+  &--animated {
+    animation-name: movInBtn;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
+    animation-delay: 0.75s;
+    animation-fill-mode: backwards;
+  }
+}
+
+.btn-text {
+  &:link,
+  &:visited {
+  font-size: 1.6rem;
+  color: $color-primary;
+  display: inline-block;
+  text-decoration: none;
+  border-bottom: 1px solid $color-primary;
+  padding: 3px;
+  }
+  &:hover{}
+  &:active{}
+}

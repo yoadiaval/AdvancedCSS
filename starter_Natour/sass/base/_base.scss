@@ -1,0 +1,15 @@
+/*para que tambien tenga en cuenta los elementos definidos como after y como before*/
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; /*se declara que esta propiedad se pueda heredar, en las especificaciones no viene así por lo que es necesario indicarlo para que definiéndolo en el body funcione hacia los demas elementos hijos*/
+}
+
+html {
+  font-size: 10px;
+}
+body {
+  box-sizing: border-box; /*la referencia se toma a partir del borde (fuera queda el margin y dentro borde, padding y content)*/
+}

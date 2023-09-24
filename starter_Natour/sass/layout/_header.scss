@@ -1,0 +1,39 @@
+.header {
+  height: 95vh;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.812),
+      rgba($color-primary-dark, 0.801)
+    ),
+    url("../img/hero.jpg");
+  background-size: cover;
+  background-position: top; /*Others: bottom, center. cdo se achica la pantalla se mantiene la imagen fija en el top y se reajusta a partir de ahí*/
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 75vh,
+    0 100%
+  ); /* (x y, x y, x y, x y) agrego las coordenadas de tantos puntos como defina en mi figura, orientacion reloj y el primero es el de la izq.*/
+  position: relative;
+
+  &__logo-box {
+    position: absolute; /*la referencia es la clase que está considerada como relative*/
+    top: 4rem;
+    left: 4rem;
+  }
+  &__logo {
+    height: 3.5rem; /*el navegador por si solo ajusta el width*/
+  }
+
+  &__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    text-align: center; /* Para centrar el button de una forma sencilla*/
+    transform: translate(
+      -50%,
+      -50%
+    ); /*esta transformación toma como referencia la posicioon del propio elemento*/
+  }
+}
+
