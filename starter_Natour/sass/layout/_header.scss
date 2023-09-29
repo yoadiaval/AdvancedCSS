@@ -8,6 +8,12 @@
     url("../img/hero.jpg");
   background-size: cover;
   background-position: top; /*Others: bottom, center. cdo se achica la pantalla se mantiene la imagen fija en el top y se reajusta a partir de ahí*/
+  -webkit-clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 75vh,
+    0 100%
+  );
   clip-path: polygon(
     0 0,
     100% 0,
